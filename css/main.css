@@ -1,0 +1,304 @@
+
+html, body {
+    width: 100%;;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow {
+    position: absolute;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/*** LANDING *****************************************************************************/
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 700px;
+    height: 450px;
+    z-index: 2;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 15px 45px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: 5px solid #000;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px #aaa;
+}
+
+.selectOptions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.6rem;
+}
+
+.selectOptions div {
+    margin: 0 10px;
+    padding: 5px 20px;
+    background-color: #222;
+    color: #ffc946;
+    font-weight: normal;
+    border: 5px solid #3464a7;
+    border-radius: 30px;
+    box-shadow: 1px 1px 8px #aaa;
+    outline: none;
+}
+
+.selectOptions div:hover {
+    background-color: #ffc946;
+    color: #000;
+    border: 5px solid #3464a7;
+    cursor: pointer;
+}
+
+.selectOptions a:active, .selectOptions a:focus {
+    opacity: 0.3;
+}
+
+/*** GAME *****************************************************************************/
+
+.opaque {
+    opacity: 0.1;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(4, 120px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-items: center;
+    padding: 20px;
+    border: 10px solid black;
+    border-radius: 20px;
+    background-image: url("https://res.cloudinary.com/dxklaorw6/image/upload/v1552165862/gamebg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.game-grid:hover {
+    cursor: pointer;
+}
+
+/*** CARD *************************************/
+
+.card-container {
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.back, .front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #193cac;
+    border: 5px solid #1e2384;
+    border-radius: 10px;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border: 3px solid #000;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
+
+.num {
+    position: relative;
+    bottom: 5px;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 0.7rem;
+}
+
+.back img {
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #fff;
+}
+
+/*** SCORES *************************************/
+
+.scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    border-right: 5px solid #000;
+}
+
+.currentScoreContainer, .bestScoreContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.currentScore {
+    margin: 10px 0 15px;
+    line-height: 2.2rem;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 3.5rem;
+    color: #000;
+}
+
+.currentScoreContainer {
+    width: 150px;
+    height: 140px;
+}
+
+.currentScoreContainer span {
+    color: #555;
+    line-height: 2.2rem;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+}
+
+.bestScoreContainer {
+    display: none;
+    width: 150px;
+    height: 110px;
+    margin-top: 15px;
+}
+
+.bestScore {
+    margin-bottom: 15px;
+    color: #aaa;
+    line-height: 1.2rem;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 2.2rem;
+}
+
+.bestScoreContainer span {
+    line-height: 1.2rem;
+    color: #aaa;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3rem;
+}
+
+/*** FINISH *****************************************************************************/
+
+.ash {
+    display: none;
+    position: absolute;
+    left: 405px;
+    z-index: 2;
+}
+
+.finish {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 405px;
+    width: 280px;
+    height: 270px;
+    background-color: #fff;
+    border: 5px solid #000;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.finish div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.finish div span {
+    position: relative;
+    top: 10px;
+    color: #555;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+}
+
+.finishScore {
+    color: #000;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 4.5rem;
+}
+
+.again {
+    margin: 20px 0 22px;
+    padding: 5px 20px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    border: 3px solid #000;
+    border-radius: 30px;
+    outline: none;
+}
+
+.again:hover {
+    border: 3px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+.finish a:active, .finish a:focus {
+    opacity: 0.3;
+}
+
+
