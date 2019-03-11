@@ -4,7 +4,7 @@
 // audio samples
 let clickSample = new Audio("https://res.cloudinary.com/dxklaorw6/video/upload/v1552165806/click.mp3")
 let matchSample = new Audio("https://res.cloudinary.com/dxklaorw6/video/upload/v1552076552/poke_match.mp3");
-let finishSample = new Audio("https://res.cloudinary.com/dxklaorw6/video/upload/v1552076552/poke_finish.mp3");
+let finishSample = new Audio("https://res.cloudinary.com/dxklaorw6/video/upload/v1552322262/poke_finish.mp3");
 let song = new Audio("https://res.cloudinary.com/dxklaorw6/video/upload/v1552076553/poke_theme.mp3");
 
 // global variables
