@@ -191,15 +191,18 @@ function checkForMatch() {
     }
     // if no match
     else {
-        // flip the two cards back over
-        activeCards.forEach(card => {
-            card.classList.remove("flipped");
-        })
+        // wait 1 second
+        setTimeout(() => {
+            // flip the two cards back over
+            activeCards.forEach(card => {
+                card.classList.remove("flipped");
+            })
+            // empty currentFlipped array
+            currentFlipped.length = 0;
+            // re-establish click listeners
+            addListeners();
+        }, 1000);
     }
-    // empty currentFlipped array
-    currentFlipped.length = 0;
-    // re-establish click listeners
-    addListeners();
 }
 
 /**************************************************/
