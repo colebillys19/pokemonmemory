@@ -191,7 +191,7 @@ function checkForMatch() {
     }
     // if no match
     else {
-        // wait 1 second
+        // wait one second
         setTimeout(() => {
             // flip the two cards back over
             activeCards.forEach(card => {
