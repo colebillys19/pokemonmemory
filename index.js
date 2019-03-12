@@ -187,11 +187,18 @@ function checkForMatch() {
             i--;
         }
         // if there are no more active cards, game is over
-        if (activeCards.length === 0) { finish() }
+        if (activeCards.length === 0) {
+            finish()
+        }
+        // if still more active cards, re-establish click listeners and empty currentFlipped array
+        else {
+            addListeners();
+            currentFlipped.length = 0;
+        }
     }
     // if no match
     else {
-        // wait 1 second
+        // wait 1 second so the user can view cards
         setTimeout(() => {
             // flip the two cards back over
             activeCards.forEach(card => {
