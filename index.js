@@ -69,7 +69,7 @@ function pick(e) {
     // hide landing with shadow and remove game opacity
     document.querySelector("div.landing").style.display = "none";
     document.querySelector("img.shadow").style.display = "none";
-    document.querySelector("img.shadow").style.opacity = "1";
+    document.querySelector("img.shadow").style.opacity = "0.8";
     document.querySelector("div.game-container").classList.remove("opaque");
 }
 
@@ -229,8 +229,7 @@ function finish() {
     }
     // display final score + image + shadow, make game board opaque
     document.querySelector("div.finishScore").innerHTML = currentScore;
-    document.querySelector("div.finish").style.display = "flex";
-    document.querySelector("img.ash").style.display = "inline-block";
+    document.querySelector("div.finish-container").style.display = "flex";
     document.querySelector("img.shadow").style.display = "inline-block";
     document.querySelector("div.game-container").classList.add("opaque");
     // add listener to 'play again' button
@@ -242,8 +241,7 @@ function finish() {
 // reset game
 function resetGame() {
     // hide finish box and remove game board opacity
-    document.querySelector("div.finish").style.display = "none"; 
-    document.querySelector("img.ash").style.display = "none";
+    document.querySelector("div.finish-container").style.display = "none"; 
     document.querySelector("img.shadow").style.display = "none";
     document.querySelector("div.game-container").classList.remove("opaque");
     // reset the score counter to 0

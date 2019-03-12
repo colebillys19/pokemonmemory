@@ -8,11 +8,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .shadow {
     position: absolute;
     opacity: 0.3;
+    min-width: 1216px;
     z-index: 0;
 }
 
@@ -235,20 +237,26 @@ body {
 
 /*** FINISH *****************************************************************************/
 
-.ash {
+.finish-container {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    left: 405px;
+}
+
+.ash {
+    position: absolute;
+    right: 85px;
     z-index: 2;
 }
 
 .finish {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 405px;
+    position: relative;
+    left: 85px;
     width: 280px;
     height: 270px;
     background-color: #fff;
