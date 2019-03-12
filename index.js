@@ -254,11 +254,14 @@ function resetGame() {
     cards.forEach(card => {
         card.classList.remove("flipped");
     })
+    // empty currentFlipped array
+    currentFlipped.length = 0;
     // wait for cards to reset
     document.querySelector("div.card").addEventListener("transitionend", function wait() {
-        this.removeEventListener("transitionend", wait, false);
         // start a new game
         newGame(pokeAmount);
+        //
+        document.querySelector("div.card").removeEventListener("transitionend", wait, false);
     }, false);
 }
 
